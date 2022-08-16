@@ -1,0 +1,22 @@
+version: '2'
+
+services:
+  app:
+    image: 'pendulums2012/organizer:latest'
+    build:
+      context: .
+    container_name: organizer-app
+    depends_on:
+      - db
+    environment:
+      - DATASOURCE_URL=jdbc:postgresql://db:5432/postgres
+    ports:
+      - "8080:8080"
+
+
+  db:
+    image: 'postgres:13.1-alpine'
+    container_name: organizer-db
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres

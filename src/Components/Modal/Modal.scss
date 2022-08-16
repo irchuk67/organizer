@@ -1,0 +1,101 @@
+@import "../../base";
+.modal{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__content{
+    width: 60rem;
+    background-color: white;
+    box-shadow: 1rem 2rem 4rem rgba(black, .7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem;
+    position: relative;
+
+    &::before, &::after{
+      content: '\25C9';
+      font-size: 4rem;
+      color: $color-primary-dark;
+    }
+
+    &::before{
+      position: absolute;
+      left: 2rem;
+      top: -.5rem;
+    }
+
+    &::after{
+      position: absolute;
+      right: 2rem;
+      top: -.5rem;
+    }
+
+    &--heading{
+      -webkit-background-clip: text;
+      background-image: linear-gradient(to right bottom,$color-primary,$color-primary-dark);
+      color: transparent;
+      font-size: 4rem;
+      text-transform: uppercase;
+    }
+
+    &--cancel{
+     margin-top: 1rem;
+      color: $grey-dark-3;
+      transition: all .2s;
+      &:hover{
+        color: $grey-dark-2;
+      }
+    }
+  }
+}
+
+.field{
+  display: flex;
+  flex-direction: column;
+
+  &--label{
+    font-size: 2.6rem;
+  }
+
+  &--input{
+    height: 3rem;
+    border-radius: .5rem;
+    outline: none;
+
+    &:valid{
+      border-color: $color-primary;
+    }
+  }
+}
+
+.form{
+  align-self: stretch;
+  margin: 0 4rem;
+  display: flex;
+  flex-direction: column;
+  &--button{
+    font-size: 1.5rem;
+    font-family: inherit;
+    align-self: center;
+    padding: 1rem 3rem;
+    margin-top: 2rem;
+    background-color: $color-primary;
+    border-radius: .5rem;
+    border: none;
+    transition: all .2s;
+    &:hover{
+      box-shadow: 0 .2rem 2rem rgba($color-primary-dark, .6);
+    }
+  }
+
+  &--question{
+    align-self: center;
+    margin-top: 2rem;
+    color: $grey-dark-3;
+    transition: all .2s;
+    &:hover{
+      color: $grey-dark-2;
+    }
+  }
+}

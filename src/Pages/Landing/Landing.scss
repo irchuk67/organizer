@@ -1,0 +1,60 @@
+@import "../../base";
+
+.landing{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  justify-items: center;
+  &--content{
+    margin: 0 15rem;
+    display: grid;
+    grid-row-gap: 5rem;
+    justify-items: start;
+
+    &__phrase{
+      font-family: $font-secondary;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      line-height: 7rem;
+      &--1{
+        font-size: 7.5rem;
+        font-weight: 500;
+        color: $color-primary;
+      }
+
+      &--2{
+        font-size: 6.5rem;
+        font-weight: 400;
+        color: $color-primary-dark;
+
+      }
+    }
+
+    &__text{
+      font-size: 1.5rem;
+      width: 75%;
+      color: $grey-dark-1;
+    }
+    &__button{
+      border: none;
+      border-radius: 5rem;
+      padding: 2rem 4rem;
+      font-size: 1.5rem;
+      font-family: inherit;
+      color: $grey-dark-1;
+      background-image: linear-gradient(to right top, $color-primary-dark, $color-primary) ;
+      transition: background-image ease-in-out 2s;
+      &:hover{
+        background-image: linear-gradient(to left bottom, $color-primary-dark, $color-primary) ;
+      }
+    }
+  }
+
+  &--img{
+    margin-top: 3rem;
+    justify-self: center;
+    align-self: center;
+    width: 75%;
+  }
+}
